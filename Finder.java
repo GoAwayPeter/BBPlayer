@@ -33,7 +33,7 @@ class Finder
         this.capt = new ScreenCapture(this.capture, this, rob);
         this.capt.start();
         this.netColor = 0xFFFF260F;
-        this.ballColor = 0xFFFF260F;
+        this.ballColor = 0xFFFF7800;
     }
 
     /*
