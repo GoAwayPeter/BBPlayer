@@ -20,7 +20,7 @@ class BBPlayer
     {
         try {
             this.rob = new Robot();
-            this.finder = new Finder(new Rectangle(300,300,300,300), rob);
+            this.finder = new Finder(new Rectangle(0,0,1000,1000), rob);
             this.swiper = new Swiper(rob);
             try {
                 this.swiper.swipe(new Line2D.Double(30,160,500,700),200);
@@ -42,8 +42,10 @@ class BBPlayer
         while(true)
         {
             Point p1 = this.finder.findBall();
+            System.out.println(" x1 " + p1.getX() + ", y1" + p1.getY());
             Point p2 = this.finder.findNet();
             Point end = this.getMidPoint(p1,this.getMidPoint(p1,p2)); //1/4 original length
+            System.out.println(" x.end " + end.getX() + ", y.end" + end.getY());
             Line2D.Double swipeLine = new Line2D.Double(p1.getX(), p1.getY(), end.getX(), end.getY());
 
             this.swiper.swipe(swipeLine,200);
